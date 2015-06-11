@@ -1,0 +1,16 @@
+{
+  "name": "persistents",
+  "version": "0.0.1",
+  "description": "Persistent data structures",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "persistent",
+    "data",
+    "structure"
+  ],
+  "author": "Sergey Romanov <xxsmotur@gmail.com> (https://github.com/saromanov)",
+  "license": "MIT"
+}
