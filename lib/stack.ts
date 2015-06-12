@@ -32,8 +32,3 @@ class Stack<T> extends Persistent.LinearPersistent<T> {
     }
   }
 }
-
-
-var stack = new Stack<string>();
-var data = stack.put("A").put("B").put("C");
-data.toList();
