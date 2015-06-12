@@ -1,15 +1,8 @@
 
 /// <reference path="./persistent.ts" />
+/// <reference path="./item.ts" />
 
-class Item<T>{ 
-    next: Item<T>;
-    element :T 
-    constructor(next: Item<T>, element: T){
-        this.next = next;
-        this.element = element;
-    }
-}
-
+import Item = UserItem.Item
 class Stack<T> extends Persistent.LinearPersistent<T> {
   private start: Item<T>;
   private end: Item<T>;
@@ -41,3 +34,6 @@ class Stack<T> extends Persistent.LinearPersistent<T> {
 }
 
 
+var stack = new Stack<string>();
+var data = stack.put("A").put("B").put("C");
+data.toList();
