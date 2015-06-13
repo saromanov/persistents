@@ -24,11 +24,30 @@ class Stack<T> extends Persistent.LinearPersistent<T> {
     return this.end.element;
   }
 
-  toList() {
-   var tmp = this.end;
+  toList(elems: Item<T>):T[] {
+  var tmp = elems;
+  var result:T[] = [];
    while(tmp != undefined){
-      console.log(tmp.element);
+      result.push(tmp.element);
       tmp = tmp.next;
+      }
+
+   return result.reverse();
     }
+
+  accessToVersion(ver:number):T[] {
+     var tmp = this.end;
+     var count = 0;
+     while(tmp != null && count != ver){
+        tmp = tmp.next;
+        count += 1;
+    }
+
+    return this.toList(tmp.next);
+
   }
 }
+
+
+
+
